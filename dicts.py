@@ -1,6 +1,11 @@
+# dicts.py
+
+
 import functions
 
 
+# Dictionary mapping topics to related keywords in Ukrainian.
+# Used to determine the topic of the user's input based on keyword matching.
 topics = {
     "info": (
         "бути",
@@ -37,6 +42,8 @@ topics = {
 }
 
 
+# Dictionary mapping topics to confirmation questions in Ukrainian.
+# Used to ask the user for confirmation about their intended action.
 question_check = {
     "info": "Ви хочете отримати інформацію про наш асортимент?",
     "purchase": "Ви хочете оформити замовлення?",
@@ -45,12 +52,16 @@ question_check = {
 }
 
 
+# Dictionary mapping affirmative and negative responses to corresponding keywords in Ukrainian.
+# Used to interpret the user's yes or no responses to the confirmation questions.
 answer_check = {
     "yes": ("так", "правильно", "безумовний", "точний", "абсолютний"),
     "no": ("не", "ні", "неправильно", "відмовитися", "неправильно", "відхилити")
 }
 
 
+# Dictionary mapping topics to their corresponding functions.
+# Used to execute the appropriate function based on the user's confirmed topic.
 functions_dict = {
     "info": functions.get_product_info,
     "purchase": functions.purchase_product,
